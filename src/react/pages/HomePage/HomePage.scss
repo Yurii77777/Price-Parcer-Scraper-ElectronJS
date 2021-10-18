@@ -1,0 +1,118 @@
+.goods-list {
+    flex: 1;
+    min-width: 807px;
+    max-width: 100%;
+    padding: 10px !important;
+
+    &__top-item {
+        display: grid;
+        grid-template-columns: 8% 7% 10% 30% 9% 13% 5% 13% 5%;
+        justify-items: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 5px 0;
+        margin-top: 5px;
+        border-top: 1px dashed #4c4c66;
+        border-bottom: 1px dashed #4c4c66;
+    }
+
+    &__top-item-price {
+        text-align: center;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 8% 7% 10% 30% 9% 13% 5% 13% 5%;
+        font-size: 1.3rem;
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(76, 76, 102, 0.2);
+    }
+
+    &__item-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item-no-image,
+    &__item-good-image {
+        width: 25px;
+    }
+
+    &__item-good-image:hover {
+        cursor: pointer;
+        position: absolute;
+        width: 200px;
+    }
+
+    &__item > a {
+        text-decoration: none;
+        padding: 5px 0;
+    }
+
+    &__item:hover {
+        background-color: beige;
+    }
+
+    &__item-price,
+    &__item-brand,
+    &__item-code,
+    &__item-title,
+    &__item-seller,
+    &__item-status,
+    &__item-description {
+        text-align: center;
+        align-self: center;
+    }
+
+    &__item-description {
+        padding: 10px 5px;
+        position: relative;
+    }
+
+    &__item-description:hover {
+        cursor: pointer;
+    }
+
+    &__item-description > span {
+        display: none;
+    }
+
+    &__item-description:hover > span {
+        display: block;
+        position: absolute;
+        font-size: 1.1rem;
+        line-height: 1.3;
+        padding: 5px;
+        width: 300px;
+        right: 10px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    &__bottom-item {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    &__bottom-item-quantity {
+        text-align: center;
+    }
+
+    &__item-url::after {
+        content: '\1433';
+    }
+
+    &__item-url {
+        text-align: center;
+        align-self: center;
+    }
+
+    &__item-url:hover {
+        cursor: pointer;
+    }
+}

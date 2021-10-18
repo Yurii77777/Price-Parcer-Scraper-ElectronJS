@@ -1,0 +1,53 @@
+{
+  "name": "new-parser",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "classnames": "^2.3.1",
+    "csv-writer": "^1.6.0",
+    "electron-is-dev": "^2.0.0",
+    "node-sass": "^6.0.1",
+    "prop-types": "^15.7.2",
+    "puppeteer-core": "^10.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2",
+    "xmlbuilder": "^15.1.1"
+  },
+  "productName": "parser",
+  "main": "electron/main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "package": "electron-builder build --win -c.extraMetadata.main=build/electron/main.js --publish never"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^15.1.2",
+    "electron-builder": "^22.13.1"
+  }
+}
