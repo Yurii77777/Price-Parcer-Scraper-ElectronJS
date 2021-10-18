@@ -49,8 +49,8 @@ const getGoodsData = async (browser, categoryName, catogoryUrl) => {
                         /**
                          * Finding Modal window selector Begin
                          */
-                        isModalWindow = false;
-                        modalWindow = null;
+                        let isModalWindow = false;
+                        let modalWindow = null;
 
                         try {
                             modalWindow = await newPage.$eval(

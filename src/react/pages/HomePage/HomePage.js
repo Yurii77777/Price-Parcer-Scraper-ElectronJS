@@ -120,7 +120,7 @@ export const HomePage = ({ data, isLoading, language, propsForInstruments }) => 
                         {language === 'UA' && 'Всього товарів, шт.'}
                         {language === 'RU' && 'Всего товаров, шт.'}
                     </p>
-                    <p className="goods-list__bottom-item-quantity">{data.length + 1}</p>
+                    <p className="goods-list__bottom-item-quantity">{data.length}</p>
                 </li>
             )}
         </ul>

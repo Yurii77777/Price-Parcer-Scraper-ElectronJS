@@ -6,6 +6,7 @@
 
 # How To Start
 
+npm run dev => запускаем со среды разработки в режиме [development].
 npm run build => собираем проект.
 В папку [build] перемещаем папку [electron] с ее содержимым.
 npm run package => собираем exe-файл для Windows.

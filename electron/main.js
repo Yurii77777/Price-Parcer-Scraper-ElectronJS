@@ -5,10 +5,8 @@ const puppeteer = require("puppeteer-core");
 
 const path = require("path");
 
-const goodsGetterFromRozetkaComUa = require("./modules/rozetkaComUa/getGoodsData");
-const goodsGetterFromEpicentrkua = require("./modules/epicentrkUa/getGoodsData");
-const goodsGetterFromAlloUa = require("./modules/alloUa/getGoodsData");
 const goodsGetterFromChemicalguysUa = require("./modules/chemicalguysUa/getChemicalguysData");
+const goodsGetterFromMeguiars = require("./modules/meguiarsComUa/getMeguiarsData");
 
 const server = new WebSocket.Server({ port: 5050 });
 const win = null;
@@ -29,7 +27,7 @@ const createWindow = (win) => {
       : `file://${path.join(__dirname, "../index.html")}`
   );
 
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 };
 
 app.whenReady().then(() => {
@@ -73,25 +71,14 @@ app.whenReady().then(() => {
           browser = await startBrowser();
           let data = null;
 
-          selectedSite === "Epicentrk.ua" &&
-            (data = await goodsGetterFromEpicentrkua.getGoodsData(
-              browser,
-              categoryUrl
-            ));
-          selectedSite === "Rozetka.com.ua" &&
-            (data = await goodsGetterFromRozetkaComUa.getGoodsData(
-              browser,
-              categoryName,
-              categoryUrl
-            ));
-          selectedSite === "Allo.ua" &&
-            (data = await goodsGetterFromAlloUa.getGoodsData(
-              browser,
-              categoryName,
-              categoryUrl
-            ));
           selectedSite === "Chemicalguys.ua" &&
             (data = await goodsGetterFromChemicalguysUa.getGoodsData(
+              browser,
+              categoryName,
+              categoryUrl
+            ));
+          selectedSite === "Meguiars.com.ua" &&
+            (data = await goodsGetterFromMeguiars.getGoodsData(
               browser,
               categoryName,
               categoryUrl

@@ -1,7 +1,5 @@
-import { rozetkacomuaCategories } from '../../modules/rozetka-com-ua/rozetkacomuaAvailableCategories';
-import { epicetrkUaCategories } from '../../modules/epicentrk-ua/epicetrkAvailableCategories';
-import { alloCategories } from '../../modules/allo-ua/alloAvailableCategories';
 import { chemicalguysCategories } from '../../modules/chemicalguys-ua/chemicalguysAvailableCategories';
+import { meguiarsCategories } from '../../modules/meguiars-com-ua/meguiarsAvailableCategories';
 
 import './Sidebar.scss';
 
@@ -11,26 +9,14 @@ export const Sidebar = ({ userSelectSite, setUserSelectCategory, language }) => 
 
     let filteredCategories = null;
 
-    if (selectedSite && selectedSite === 'Epicentrk.ua') {
-        filteredCategories = epicetrkUaCategories.filter(
-            ({ siteName }) => siteName === selectedSite
-        );
-    }
-
-    if (selectedSite && selectedSite === 'Rozetka.com.ua') {
-        filteredCategories = rozetkacomuaCategories.filter(
-            ({ siteName }) => siteName === selectedSite
-        );
-    }
-
-    if (selectedSite && selectedSite === 'Allo.ua') {
-        filteredCategories = alloCategories.filter(
-            ({ siteName }) => siteName === selectedSite
-        );
-    }
-
     if (selectedSite && selectedSite === 'Chemicalguys.ua') {
         filteredCategories = chemicalguysCategories.filter(
+            ({ siteName }) => siteName === selectedSite
+        );
+    }
+
+    if (selectedSite && selectedSite === 'Meguiars.com.ua') {
+        filteredCategories = meguiarsCategories.filter(
             ({ siteName }) => siteName === selectedSite
         );
     }
@@ -73,10 +59,8 @@ export const Sidebar = ({ userSelectSite, setUserSelectCategory, language }) => 
             return setUserSelectCategory(selectedCategory);
         };
 
-        selectedSite === 'Epicentrk.ua' && getSelectedCategory(epicetrkUaCategories);
-        selectedSite === 'Rozetka.com.ua' && getSelectedCategory(rozetkacomuaCategories);
-        selectedSite === 'Allo.ua' && getSelectedCategory(alloCategories);
         selectedSite === 'Chemicalguys.ua' && getSelectedCategory(chemicalguysCategories);
+        selectedSite === 'Meguiars.com.ua' && getSelectedCategory(meguiarsCategories);
     };
 
     return (

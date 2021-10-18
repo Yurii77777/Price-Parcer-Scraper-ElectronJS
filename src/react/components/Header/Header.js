@@ -1,37 +1,11 @@
 import logo from '../../resources/images/main-logo.png';
-import rozetka_logo from '../../resources/images/sites-icons/rozetka.png';
-import epicentr_logo from '../../resources/images/sites-icons/epicentrk.png';
-import allo_logo from '../../resources/images/sites-icons/allo.png';
 import chemicalguys_logo from '../../resources/images/sites-icons/chemicalguys.png';
+import meguiars_logo from '../../resources/images/sites-icons/meguiars.png';
 
 import './Header.scss';
 
 export const Header = ({ setUserSelectSite, setLanguage, language }) => {
     const availableSites = [
-        {
-            idSite: 1,
-            inputId: 'rozetka_com_ua',
-            inputName: 'rozetka_com_ua',
-            srcLogo: rozetka_logo,
-            altLogo: 'Rozetka.com.ua',
-            url: 'https://rozetka.com.ua/'
-        },
-        {
-            idSite: 2,
-            inputId: 'epicetrk_ua',
-            inputName: 'epicetrk_ua',
-            srcLogo: epicentr_logo,
-            altLogo: 'Epicentrk.ua',
-            url: 'https://epicentrk.ua/'
-        },
-        {
-            idSite: 3,
-            inputId: 'allo_ua',
-            inputName: 'allo_ua',
-            srcLogo: allo_logo,
-            altLogo: 'Allo.ua',
-            url: 'https://allo.ua/'
-        },
         {
             idSite: 4,
             inputId: 'chemicalguys_ua',
@@ -39,6 +13,14 @@ export const Header = ({ setUserSelectSite, setLanguage, language }) => {
             srcLogo: chemicalguys_logo,
             altLogo: 'Chemicalguys.ua',
             url: 'https://chemicalguys.ua/'
+        },
+        {
+            idSite: 5,
+            inputId: 'meguiars_com_ua',
+            inputName: 'meguiars_com_ua',
+            srcLogo: meguiars_logo,
+            altLogo: 'Meguiars.com.ua',
+            url: 'https://meguiars.com.ua/'
         }
     ];
 

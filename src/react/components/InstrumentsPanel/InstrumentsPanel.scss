@@ -16,10 +16,7 @@
         width: 120px;
         padding: 5px;
         background: linear-gradient(
-            241.25deg,
-            rgba(250, 250, 255, 0.35) 4.4%,
-            rgba(255, 255, 255, 0.53) 119.94%
-        );
+            241.25deg, #7e7ba0 4.4%, #cdcdcd 119.94%);
         border-radius: 5px;
     }
 
@@ -43,7 +40,5 @@
     &__submenu-item:hover {
         cursor: pointer;
         color: #fff;
-        background-color: #7e7ba0;
-        border-color: #7e7ba0;
     }
 }
