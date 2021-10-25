@@ -1,4 +1,4 @@
-export const createXmlFileMeguiarsProm = (data, categoryName) => {
+export const createXmlFileKochChemieProm = (data, categoryName) => {
     const builder = require('xmlbuilder');
     let xml = builder.create('shop');
 
@@ -15,14 +15,28 @@ export const createXmlFileMeguiarsProm = (data, categoryName) => {
             goodImgUrl2,
             goodStatus,
             goodBrand,
-            goodSize,
-            goodDiameter,
-            goodUsage,
-            goodMaterial,
-            goodHardness,
-            goodMethod,
-            goodSeries,
-            goodCountry,
+            goodAction,
+            goodProperties,
+            goodPHnorm,
+            goodAdditionalInfo,
+            goodGuarantee,
+            goodPowerType,
+            goodRotationType,
+            goodMaxDiameter,
+            goodMaxDiameter2,
+            goodUse,
+            goodIdlingSpeed,
+            goodPowerConsumption,
+            goodPowerOutput,
+            goodToolHolder,
+            goodDimensions,
+            goodCableLength,
+            goodWeightWithoutBattery,
+            goodDimensions2,
+            goodBatteryCapacity,
+            goodBatteryVoltage,
+            goodIdlingSpeed2,
+            goodStep,
         } = good;
 
         xml
@@ -97,20 +111,20 @@ export const createXmlFileMeguiarsProm = (data, categoryName) => {
             .ele('vendor')
             .txt(`${goodBrand ? goodBrand : ''}`)
             .up()
-            .ele('param', {name: 'Размер'})
-            .txt(`${goodSize ? goodSize : ''}`)
+            .ele('param', {name: 'Действие'})
+            .txt(`${goodAction ? goodAction : ''}`)
             .up()
-            .ele('param', {name: 'Диаметр'})
-            .txt(`${goodDiameter ? goodDiameter : ''}`)
+            .ele('param', {name: 'Свойства'})
+            .txt(`${goodProperties ? goodProperties : ''}`)
             .up()
-            .ele('param', {name: 'Применение'})
-            .txt(`${goodUsage ? goodUsage : ''}`)
+            .ele('param', {name: 'Норма pH'})
+            .txt(`${goodPHnorm ? goodPHnorm : ''}`)
             .up()
-            .ele('param', {name: 'Материал'})
-            .txt(`${goodMaterial ? goodMaterial : ''}`)
+            .ele('param', {name: 'Дополнительная информация'})
+            .txt(`${goodAdditionalInfo ? goodAdditionalInfo : ''}`)
             .up()
-            .ele('param', {name: 'Жесткость'})
-            .txt(`${goodHardness ? goodHardness : ''}`)
+            .ele('param', {name: 'Гарантия'})
+            .txt(`${goodGuarantee ? goodGuarantee : ''}`)
             .up()
             .ele('param', {name: 'Вес'})
             .txt(`${goodWeight ? goodWeight : ''}`)
@@ -124,14 +138,56 @@ export const createXmlFileMeguiarsProm = (data, categoryName) => {
             .ele('available')
             .txt(`${goodStatus === 'В наличии ' ? 'true' : 'false'}`)
             .up()
-            .ele('param', {name: 'Метод'})
-            .txt(`${goodMethod ? goodMethod : ''}`)
+            .ele('param', {name: 'Тип питания'})
+            .txt(`${goodPowerType ? goodPowerType : ''}`)
             .up()
-            .ele('param', {name: 'Серия'})
-            .txt(`${goodSeries ? goodSeries : ''}`)
+            .ele('param', {name: 'Тип вращения'})
+            .txt(`${goodRotationType ? goodRotationType : ''}`)
             .up()
-            .ele('param', {name: 'Страна'})
-            .txt(`${goodCountry ? goodCountry : ''}`)
+            .ele('param', {name: 'Макс диаметр полировального элемента'})
+            .txt(`${goodMaxDiameter ? goodMaxDiameter : ''}`)
+            .up()
+            .ele('param', {name: 'Макс диаметр опорного диска'})
+            .txt(`${goodMaxDiameter2 ? goodMaxDiameter2 : ''}`)
+            .up()
+            .ele('param', {name: 'Использование'})
+            .txt(`${goodUse ? goodUse : ''}`)
+            .up()
+            .ele('param', {name: 'Частота вращения на холостом ходу'})
+            .txt(`${goodIdlingSpeed ? goodIdlingSpeed : ''}`)
+            .up()
+            .ele('param', {name: 'Потребляемая мощность'})
+            .txt(`${goodPowerConsumption ? goodPowerConsumption : ''}`)
+            .up()
+            .ele('param', {name: 'Отдаваемая мощность'})
+            .txt(`${goodPowerOutput ? goodPowerOutput : ''}`)
+            .up()
+            .ele('param', {name: 'Крепление инструмента'})
+            .txt(`${goodToolHolder ? goodToolHolder : ''}`)
+            .up()
+            .ele('param', {name: 'Размеры_(ДxВ)'})
+            .txt(`${goodDimensions ? goodDimensions : ''}`)
+            .up()
+            .ele('param', {name: 'Длина кабеля'})
+            .txt(`${goodCableLength ? goodCableLength : ''}`)
+            .up()
+            .ele('param', {name: 'Вес без аккумулятора'})
+            .txt(`${goodWeightWithoutBattery ? goodWeightWithoutBattery : ''}`)
+            .up()
+            .ele('param', {name: 'Размеры_(ДxШxВ)'})
+            .txt(`${goodDimensions2 ? goodDimensions2 : ''}`)
+            .up()
+            .ele('param', {name: 'Емкость аккумулятора'})
+            .txt(`${goodBatteryCapacity ? goodBatteryCapacity : ''}`)
+            .up()
+            .ele('param', {name: 'Напряжение аккумулятора'})
+            .txt(`${goodBatteryVoltage ? goodBatteryVoltage : ''}`)
+            .up()
+            .ele('param', {name: 'Число ходов на холостом ходу'})
+            .txt(`${goodIdlingSpeed2 ? goodIdlingSpeed2 : ''}`)
+            .up()
+            .ele('param', {name: 'Ход'})
+            .txt(`${goodStep ? goodStep : ''}`)
     }
 
     let xmlString = xml.toString({ pretty: true });

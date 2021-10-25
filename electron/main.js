@@ -7,6 +7,7 @@ const path = require("path");
 
 const goodsGetterFromChemicalguysUa = require("./modules/chemicalguysUa/getChemicalguysData");
 const goodsGetterFromMeguiars = require("./modules/meguiarsComUa/getMeguiarsData");
+const goodsGetterFromKochChemie = require("./modules/koch_chemie_com_ua/getKochChemieData");
 
 const server = new WebSocket.Server({ port: 5050 });
 const win = null;
@@ -40,7 +41,7 @@ app.whenReady().then(() => {
 
       if (event === "getGoodsRequest") {
         let browser;
-        let exPath =
+        let exPath = 
           "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 
         const startBrowser = async () => {
@@ -77,8 +78,16 @@ app.whenReady().then(() => {
               categoryName,
               categoryUrl
             ));
+
           selectedSite === "Meguiars.com.ua" &&
             (data = await goodsGetterFromMeguiars.getGoodsData(
+              browser,
+              categoryName,
+              categoryUrl
+            ));
+
+          selectedSite === "Koch-chemie.com.ua" &&
+            (data = await goodsGetterFromKochChemie.getGoodsData(
               browser,
               categoryName,
               categoryUrl

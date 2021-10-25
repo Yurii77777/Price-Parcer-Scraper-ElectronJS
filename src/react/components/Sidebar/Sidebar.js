@@ -1,5 +1,6 @@
 import { chemicalguysCategories } from '../../modules/chemicalguys-ua/chemicalguysAvailableCategories';
 import { meguiarsCategories } from '../../modules/meguiars-com-ua/meguiarsAvailableCategories';
+import { koch_chemie_Categories } from '../../modules/koch_chemie_com_ua/koch_chemie_AvailableCategories';
 
 import './Sidebar.scss';
 
@@ -17,6 +18,12 @@ export const Sidebar = ({ userSelectSite, setUserSelectCategory, language }) => 
 
     if (selectedSite && selectedSite === 'Meguiars.com.ua') {
         filteredCategories = meguiarsCategories.filter(
+            ({ siteName }) => siteName === selectedSite
+        );
+    }
+
+    if (selectedSite && selectedSite === 'Koch-chemie.com.ua') {
+        filteredCategories = koch_chemie_Categories.filter(
             ({ siteName }) => siteName === selectedSite
         );
     }
@@ -61,6 +68,7 @@ export const Sidebar = ({ userSelectSite, setUserSelectCategory, language }) => 
 
         selectedSite === 'Chemicalguys.ua' && getSelectedCategory(chemicalguysCategories);
         selectedSite === 'Meguiars.com.ua' && getSelectedCategory(meguiarsCategories);
+        selectedSite === 'Koch-chemie.com.ua' && getSelectedCategory(koch_chemie_Categories);
     };
 
     return (

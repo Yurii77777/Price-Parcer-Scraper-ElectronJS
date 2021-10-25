@@ -1,6 +1,7 @@
 import logo from '../../resources/images/main-logo.png';
 import chemicalguys_logo from '../../resources/images/sites-icons/chemicalguys.png';
 import meguiars_logo from '../../resources/images/sites-icons/meguiars.png';
+import koch_chemie_logo from '../../resources/images/sites-icons/koch-chemie.png';
 
 import './Header.scss';
 
@@ -21,6 +22,14 @@ export const Header = ({ setUserSelectSite, setLanguage, language }) => {
             srcLogo: meguiars_logo,
             altLogo: 'Meguiars.com.ua',
             url: 'https://meguiars.com.ua/'
+        },
+        {
+            idSite: 6,
+            inputId: 'koch_chemie_com_ua',
+            inputName: 'koch_chemie_com_ua',
+            srcLogo: koch_chemie_logo,
+            altLogo: 'Koch-chemie.com.ua',
+            url: 'https://koch-chemie.com.ua/'
         }
     ];
 

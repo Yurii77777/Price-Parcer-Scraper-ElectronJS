@@ -4,6 +4,10 @@ import { downloadCsvFile } from '../../utils/downloadCsvFile';
 import { downloadXmlFile } from '../../utils/downloadXmlFile';
 import { createCsvFileChemicalProm } from '../../modules/chemicalguys-ua/createCsvFilePromUa';
 import { createXmlFileChemicalProm } from '../../modules/chemicalguys-ua/createXmlFilePromUa';
+import { createCsvFileMeguiarsProm } from '../../modules/meguiars-com-ua/createCsvFilePromUa';
+import { createXmlFileMeguiarsProm } from '../../modules/meguiars-com-ua/createXmlFilePromUa';
+import { createCsvFileKochChemieProm } from '../../modules/koch_chemie_com_ua/createCsvFilePromUa';
+import { createXmlFileKochChemieProm } from '../../modules/koch_chemie_com_ua/createXmlFilePromUa';
 
 import './InstrumentsPanel.scss';
 
@@ -70,6 +74,16 @@ export const InstrumentsPanel = ({ data, propsForInstruments, language }) => {
             downloadXmlFile(xmlString, category);
         }
 
+        if (id === 1.2 && site === 'Meguiars.com.ua') {
+            let xmlString = createXmlFileMeguiarsProm(data, category);
+            downloadXmlFile(xmlString, category);
+        }
+
+        if (id === 1.2 && site === 'Koch-chemie.com.ua') {
+            let xmlString = createXmlFileKochChemieProm(data, category);
+            downloadXmlFile(xmlString, category);
+        }
+
         if (id === 2.1) {
             let csvString = createCsvFile(data);
             downloadCsvFile(csvString, category);
@@ -77,6 +91,16 @@ export const InstrumentsPanel = ({ data, propsForInstruments, language }) => {
 
         if (id === 2.2 && site === 'Chemicalguys.ua') {
             let csvString = createCsvFileChemicalProm(data);
+            downloadCsvFile(csvString, category);
+        }
+
+        if (id === 2.2 && site === 'Meguiars.com.ua') {
+            let csvString = createCsvFileMeguiarsProm(data);
+            downloadCsvFile(csvString, category);
+        }
+
+        if (id === 2.2 && site === 'Koch-chemie.com.ua') {
+            let csvString = createCsvFileKochChemieProm(data);
             downloadCsvFile(csvString, category);
         }
     };

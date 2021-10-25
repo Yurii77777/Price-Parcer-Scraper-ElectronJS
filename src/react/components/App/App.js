@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { Header } from '../Header/Header';
-import { Sidebar } from '../Sidebar/Sidebar';
-import { Faq } from '../Faq/Faq';
-import { HomePage } from '../../pages/HomePage/HomePage';
-import { Footer } from '../Footer/Footer';
+import { Header } from "../Header/Header";
+import { Sidebar } from "../Sidebar/Sidebar";
+import { Faq } from "../Faq/Faq";
+import { HomePage } from "../../pages/HomePage/HomePage";
+import { Footer } from "../Footer/Footer";
 
 export const App = () => {
     const [userSelectSite, setUserSelectSite] = useState({});
@@ -14,7 +14,7 @@ export const App = () => {
     const [language, setLanguage] = useState();
     const [propsForInstruments, setPropsForInstruments] = useState({
         site: null,
-        category: null
+        category: null,
     });
 
     return (
@@ -24,7 +24,6 @@ export const App = () => {
                 setLanguage={setLanguage}
                 language={language}
             />
-
             <main className="content-container">
                 <Sidebar
                     userSelectSite={userSelectSite}
@@ -38,7 +37,6 @@ export const App = () => {
                     propsForInstruments={propsForInstruments}
                 />
             </main>
-
             <Faq
                 userSelectSite={userSelectSite}
                 setUserSelectSite={setUserSelectSite}
